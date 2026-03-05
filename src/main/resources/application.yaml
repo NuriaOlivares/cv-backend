@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cvplatform
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    serialization:
+      indent-output: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+jwt:
+  expiration: 900000
+
+groq:
+  api-key: ${GROQ_API_KEY}
+  model: llama3-8b-8192
+  api-url: https://api.groq.com/openai/v1/chat/completions
