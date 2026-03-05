@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ExperienceRepository extends JpaRepository<Experience, Long> {
-    List<Experience> findByProfileIdOrderByStartDateDesc(Long profileId);
+    List<Experience> findByProfileIdOrderByEndDateDesc(Long profileId);
 }

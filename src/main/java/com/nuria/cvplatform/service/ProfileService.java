@@ -32,6 +32,7 @@ public class ProfileService {
                 .summary(profile.getSummary())
                 .email(profile.getEmail())
                 .phone(profile.getPhone())
+                .secondaryPhone(profile.getSecondaryPhone())
                 .linkedin(profile.getLinkedin())
                 .github(profile.getGithub())
                 .experiences(experienceService.getExperiencesByProfile(profile.getId()))
@@ -52,6 +53,7 @@ public class ProfileService {
         profile.setSummary(request.getSummary());
         profile.setEmail(request.getEmail());
         profile.setPhone(request.getPhone());
+        profile.setSecondaryPhone(request.getPhone());
         profile.setLinkedin(request.getLinkedin());
         profile.setGithub(request.getGithub());
 

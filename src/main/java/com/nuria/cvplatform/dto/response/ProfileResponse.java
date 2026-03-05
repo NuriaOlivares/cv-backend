@@ -14,6 +14,7 @@ public class ProfileResponse {
     private String summary;
     private String email;
     private String phone;
+    private String secondaryPhone;
     private String linkedin;
     private String github;
     private List<ExperienceResponse> experiences;

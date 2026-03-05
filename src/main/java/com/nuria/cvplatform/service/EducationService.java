@@ -22,7 +22,7 @@ public class EducationService {
 
     @Transactional(readOnly = true)
     public List<EducationResponse> getEducationByProfile(Long profileId) {
-        return educationRepository.findByProfileIdOrderByStartDateDesc(profileId)
+        return educationRepository.findByProfileIdOrderByDisplayOrderAsc(profileId)
                 .stream()
                 .map(this::toResponse)
                 .toList();

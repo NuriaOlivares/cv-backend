@@ -22,7 +22,7 @@ public class ExperienceService {
 
     @Transactional(readOnly = true)
     public List<ExperienceResponse> getExperiencesByProfile(Long profileId) {
-        return experienceRepository.findByProfileIdOrderByStartDateDesc(profileId)
+        return experienceRepository.findByProfileIdOrderByEndDateDesc(profileId)
                 .stream()
                 .map(this::toResponse)
                 .toList();

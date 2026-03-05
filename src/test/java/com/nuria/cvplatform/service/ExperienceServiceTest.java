@@ -44,7 +44,7 @@ class ExperienceServiceTest {
                 .startDate(LocalDate.of(2023, 1, 1))
                 .build();
 
-        when(experienceRepository.findByProfileIdOrderByStartDateDesc(1L))
+        when(experienceRepository.findByProfileIdOrderByEndDateDesc(1L))
                 .thenReturn(List.of(experience));
 
         List<ExperienceResponse> result = experienceService.getExperiencesByProfile(1L);

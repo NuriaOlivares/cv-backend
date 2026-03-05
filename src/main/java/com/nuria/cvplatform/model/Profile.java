@@ -27,6 +27,7 @@ public class Profile {
     private String summary;
 
     private String phone;
+    private String secondaryPhone;
     private String email;
     private String linkedin;
     private String github;
