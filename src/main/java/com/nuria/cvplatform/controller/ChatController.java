@@ -17,7 +17,6 @@ public class ChatController {
     private final ChatService chatService;
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ChatResponse> chat(
             @Valid @RequestBody ChatRequest request
     ) {
