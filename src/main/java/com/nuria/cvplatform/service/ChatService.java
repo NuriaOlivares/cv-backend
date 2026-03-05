@@ -72,9 +72,6 @@ public class ChatService {
                 
                 ### CONTACT & CONVERSION:
                 - **Call to Action:** If the user seems interested in hiring or interviewing her, encourage using the contact form on this page or the LinkedIn profile.
-                - **Direct Contact:** - LinkedIn: %s
-                    - Email: %s
-                    - Phone: %s (Secondary: %s)
                 
                 Here is her profile:
                 
