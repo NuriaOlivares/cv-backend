@@ -78,7 +78,8 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(List.of(
                 "http://localhost:5173",
-                "https://cv-frontend-9mqc.onrender.com"
+                "https://cv-frontend-9mqc.onrender.com",
+                "https://cv-frontend-production.up.railway.app/"
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
