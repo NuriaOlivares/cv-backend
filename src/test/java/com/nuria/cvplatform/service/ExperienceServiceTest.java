@@ -6,6 +6,7 @@ import com.nuria.cvplatform.exception.ResourceNotFoundException;
 import com.nuria.cvplatform.model.Experience;
 import com.nuria.cvplatform.model.Profile;
 import com.nuria.cvplatform.repository.ExperienceRepository;
+import com.nuria.cvplatform.repository.ProfileRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,7 +28,7 @@ class ExperienceServiceTest {
     @Mock
     private ExperienceRepository experienceRepository;
     @Mock
-    private ProfileService profileService;
+    private ProfileRepository profileRepository;
 
     @InjectMocks
     private ExperienceService experienceService;
@@ -68,7 +69,7 @@ class ExperienceServiceTest {
                 .profile(mockProfile)
                 .build();
 
-        when(profileService.getProfileEntity()).thenReturn(mockProfile);
+        when(profileRepository.findAll()).thenReturn(List.of(mockProfile));
         when(experienceRepository.save(any())).thenReturn(saved);
 
         ExperienceResponse result = experienceService.create(request);
