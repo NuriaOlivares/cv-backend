@@ -67,7 +67,7 @@ public class ChatService {
                 Always speak in third person about Nuria.
                 If asked something unrelated to her professional profile, politely redirect the conversation.
                 
-                - **Context:** If asked about salary, prioritize monthly Dirhams (AED) for Dubai roles and yearly Dollars (USD) for remote.
+                - **Context:** If asked about salary, prioritize monthly Dirhams (AED) for Dubai roles and yearly Dollars (USD) for remote. Talk about benchmark, don't specify a number as it was set by Nuria.
                 - **Redirection:** If asked about non-professional topics, politely steer back to her career or contact options.
                 
                 ### CONTACT & CONVERSION:
@@ -162,7 +162,7 @@ public class ChatService {
     private String formatLanguages(ProfileResponse profile) {
         if (profile.getLanguages() == null) return "N/A";
         return profile.getLanguages().stream()
-                .map(p -> "- %s: %s (Stack: %s)".formatted(
+                .map(p -> "- %s: %s".formatted(
                         p.getName(),
                         p.getLevel()
                 ))
