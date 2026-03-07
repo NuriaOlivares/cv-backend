@@ -6,6 +6,8 @@ import com.nuria.cvplatform.exception.ResourceNotFoundException;
 import com.nuria.cvplatform.model.Profile;
 import com.nuria.cvplatform.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +23,7 @@ public class ProfileService {
     private final CertificationService certificationService;
     private final LanguageService languageService;
 
+    @Cacheable("profile")
     @Transactional(readOnly = true)
     public ProfileResponse getProfile() {
         Profile profile = getProfileEntity();
@@ -45,6 +48,7 @@ public class ProfileService {
     }
 
     @Transactional
+    @CacheEvict(value = {"profile", "systemPrompt"}, allEntries = true)
     public ProfileResponse updateProfile(ProfileRequest request) {
         Profile profile = getProfileEntity();
 
