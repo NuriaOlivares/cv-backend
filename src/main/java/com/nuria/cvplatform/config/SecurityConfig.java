@@ -57,16 +57,16 @@ public class SecurityConfig {
                         })
                 )
                 .headers(headers -> headers
-                        .contentSecurityPolicy(csp -> csp
-                                .policyDirectives(
-                                        "default-src 'self'; " +
-                                            "script-src 'self' 'unsafe-inline'; " +
-                                            "style-src 'self' 'unsafe-inline'; " +
-                                            "img-src 'self' data:; " +
-                                            "connect-src 'self' https://cv-backend-production-24f8.up.railway.app; " +
-                                            "frame-ancestors 'none';"
-                                )
-                        )
+//                        .contentSecurityPolicy(csp -> csp
+//                                .policyDirectives(
+//                                        "default-src 'self'; " +
+//                                            "script-src 'self' 'unsafe-inline'; " +
+//                                            "style-src 'self' 'unsafe-inline'; " +
+//                                            "img-src 'self' data:; " +
+//                                            "connect-src 'self' https://cv-backend-production-24f8.up.railway.app; " +
+//                                            "frame-ancestors 'none';"
+//                                )
+//                        )
                         .frameOptions(frame -> frame.deny())
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
