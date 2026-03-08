@@ -63,7 +63,7 @@ public class SecurityConfig {
                                             "script-src 'self' 'unsafe-inline'; " +
                                             "style-src 'self' 'unsafe-inline'; " +
                                             "img-src 'self' data:; " +
-                                            "connect-src 'self' https://cv-frontend-production.up.railway.app; " +
+                                            "connect-src 'self' https://cv-backend-production-24f8.up.railway.app; " +
                                             "frame-ancestors 'none';"
                                 )
                         )
